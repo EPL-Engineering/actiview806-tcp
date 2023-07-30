@@ -1,0 +1,145 @@
+<!DOCTYPE HTML>
+<html id="hs-topic-p">
+<head>
+<title>ActiView806 TCP</title>
+<meta charset="windows-1252" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="generator" content="HelpSmith 9.7 (Build 23.607)" />
+<style type="text/css" media="screen">
+html {
+  height: 100%;
+}
+body {
+  background-color: #f0f3f7;
+  margin: 12px 0 12px 0;
+}
+</style>
+<link type="text/css" rel="stylesheet" href="../css/topics/style.css" />
+<script type="text/javascript" src="../js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="../js/settings.js?00685af7"></script>
+<script type="text/javascript" src="../js/core.min.js?3e9f1cdf"></script>
+<script type="text/javascript" src="../js/topic.min.js?3e9f1cdf"></script>
+<script type="text/javascript">
+	var topicContext = 20;
+</script>
+<!-- Web Help Topic -->
+</head>
+<body>
+<div>
+  <table class="align-c tbl0">
+    <tr class="row0">
+      <td class="cell0">
+        <p>&nbsp;</p>
+      </td>
+      <td class="cell1">
+        <div>
+          <table class="align-c tbl1">
+            <tr class="row0">
+              <td class="cell0">
+                <p>&nbsp;</p>
+              </td>
+              <td class="cell1">
+                <div>
+                  <table class="align-c tbl2">
+                    <tr class="row0">
+                      <td class="cell0">
+                        <p class="ps0"><span class="ts0">Navigation: &lt;Root level&gt;</span></p>
+                        <h1 class="hd0"><span class="ts1">ActiView806 TCP</span></h1>
+                      </td>
+                      <td class="cell1">
+                        <p class="ps1"><img width="32" height="32" alt="" src="images/navigation%20links/previous%20disabled%20bluetriangles32.png" /><span class="ts0">&nbsp;</span><a href="idh-topic10.htm" title="Example"><img width="32" height="32" alt="" src="images/navigation%20links/next%20bluetriangles32.png" /></a></p>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </td>
+              <td class="cell0">
+                <p>&nbsp;</p>
+              </td>
+            </tr>
+            <tr class="row0">
+              <td class="cell0">
+                <p>&nbsp;</p>
+              </td>
+              <td class="cell2">
+                <p class="ps2"><span class="ts2">&nbsp;</span></p>
+                <h2 class="hd1"><span class="ts3">ActiView TCP Control Server</span></h2>
+                <p class="ps3"><span class="ts4">The ActiView 8.06 software (</span><a href="idh-topic20.htm#https://www.biosemi.com/download.htm" class="hs0">link</a><span class="ts4">) for Biosemi's ActiveTwo system was modified to provide interprocess communication (IPD) via a TCP connection. The TCP control server allows a client application to automatically perform actions typically performed manually by the user, and to query the current state of ActiView. It is located on the &ldquo;TCP Server&rdquo; tab and must be manually started.</span></p>
+                <p class="ps4"><img width="847" height="337" alt="" src="images/image(6).png" /></p>
+                <p class="ps4">&nbsp;</p>
+                <h2 class="hd1"><span class="ts3">Sending commands to ActiView806 TCP server</span></h2>
+                <p class="ps5"><span style="font-family: Tahoma; font-size: 10pt; color: Black">1.</span><span style="display: inline-block; width: 13px"></span><span class="ts4">Open TCP connection</span></p>
+                <p class="ps5"><span style="font-family: Tahoma; font-size: 10pt; color: Black">2.</span><span style="display: inline-block; width: 13px"></span><span class="ts4">Send command string (see below) as byte array prepended with four bytes containing string length (32-bit integer)</span></p>
+                <p class="ps5"><span style="font-family: Tahoma; font-size: 10pt; color: Black">3.</span><span style="display: inline-block; width: 13px"></span><span class="ts4">(Optional) receive reply data</span></p>
+                <p class="ps5"><span style="font-family: Tahoma; font-size: 10pt; color: Black">4.</span><span style="display: inline-block; width: 13px"></span><span class="ts4">Receive 4 bytes as acknowledgement</span></p>
+                <p class="ps5"><span style="font-family: Tahoma; font-size: 10pt; color: Black">5.</span><span style="display: inline-block; width: 13px"></span><span class="ts4">Close TCP connection</span></p>
+                <p class="ps6">&nbsp;</p>
+                <h2 class="hd1"><span class="ts3">Command strings</span></h2>
+                <p class="ps3"><span class="ts4">Command strings consist of a command and optional parameters separated by semicolons.</span></p>
+                <p class="ps7"><span class="ts5">&ldquo;Clear&rdquo;</span></p>
+                <p class="ps3"><span class="ts4">Purpose: clear previous settings. No additional parameters</span></p>
+                <p class="ps3"><span class="ts4">Example: &ldquo;Clear&rdquo;</span></p>
+                <p class="ps7"><span class="ts5">&ldquo;Filepath&rdquo;</span></p>
+                <p class="ps3"><span class="ts4">Purpose: specify the .bdf file path</span></p>
+                <p class="ps3"><span class="ts4">Example: &ldquo;Filepath;C:\Data\XYZ999-ABR-3.bdf&rdquo;</span></p>
+                <p class="ps7"><span class="ts5">&ldquo;Local ID&rdquo;</span></p>
+                <p class="ps3"><span class="ts4">Purpose: send &ldquo;Local Subject Identification&rdquo; and &ldquo;Local Recording Identification&rdquo; that appear in the Select Save Options dialog.</span></p>
+                <p class="ps3"><span class="ts4">Example: &ldquo;Local ID;SubjID;RecID&rdquo;</span></p>
+                <p class="ps7"><span class="ts5">&ldquo;Pause&rdquo;</span></p>
+                <p class="ps3"><span class="ts4">Purpose: simulates press of &ldquo;Pause&rdquo; button in ActiView. No additional parameters</span></p>
+                <p class="ps3"><span class="ts4">Example: &ldquo;Pause&rdquo;</span></p>
+                <p class="ps7"><span class="ts5">&ldquo;Ping&rdquo;</span></p>
+                <p class="ps3"><span class="ts4">Purpose: sends a dummy command to check TCP connection. No additional parameters</span></p>
+                <p class="ps3"><span class="ts4">Example: &ldquo;Ping&rdquo;</span></p>
+                <p class="ps7"><span class="ts5">&ldquo;Save&rdquo;</span></p>
+                <p class="ps3"><span class="ts4">Purpose: simulates press of &ldquo;Save&rdquo; button in ActiView. No additional parameters</span></p>
+                <p class="ps3"><span class="ts4">Example: &ldquo;Save&rdquo;</span></p>
+                <p class="ps7"><span class="ts5">&ldquo;Saving&rdquo;</span></p>
+                <p class="ps3"><span class="ts4">Purpose: queries ActiView to see if it is actively saving (used to delay stimulus generation or other operations until data are being recorded). No additional parameters</span></p>
+                <p class="ps3"><span class="ts4">Example: &ldquo;Saving&rdquo;</span></p>
+                <p class="ps3"><span class="ts4">Reply data: 16-bit integer (&gt;0 = true)</span></p>
+                <p class="ps7"><span class="ts5">&ldquo;Start&rdquo;</span></p>
+                <p class="ps3"><span class="ts4">Purpose: simulates press of &ldquo;Start&rdquo; button in ActiView. No additional parameters</span></p>
+                <p class="ps3"><span class="ts4">Example: &ldquo;Start&rdquo;</span></p>
+                <p class="ps7"><span class="ts5">&ldquo;Stop&rdquo;</span></p>
+                <p class="ps3"><span class="ts4">Purpose: simulates press of &ldquo;Stop&rdquo; button in ActiView. No additional parameters</span></p>
+                <p class="ps3"><span class="ts4">Example: &ldquo;Stop&rdquo;</span></p>
+                <p class="ps7"><span class="ts5">&ldquo;TCP Length&rdquo;</span></p>
+                <p class="ps3"><span class="ts4">Purpose: queries ActiView for packet size used when transmitting data on-the-fly. (No additional parameters)</span></p>
+                <p class="ps3"><span class="ts4">Example: &ldquo;TCP Length&rdquo;</span></p>
+                <p class="ps3"><span class="ts4">Reply data: 32-bit integer</span></p>
+                <p class="ps7"><span class="ts5">&ldquo;TCP Options&rdquo;</span></p>
+                <p class="ps3"><span class="ts4">Purpose: specify data to be transmitted on-the-fly.</span></p>
+                <p class="ps3"><span class="ts4">Parameters: </span></p>
+                <p class="ps8"><span style="font-family: Symbol; font-size: 11pt; color: Black">&#xF0B7;</span><span style="display: inline-block; width: 19px"></span><span class="ts4">Subset, integer</span></p>
+                <p class="ps8"><span style="font-family: Symbol; font-size: 11pt; color: Black">&#xF0B7;</span><span style="display: inline-block; width: 19px"></span><span class="ts4">EX, boolean as integer (i.e. 0 = false, 1 = true)</span></p>
+                <p class="ps3"><span class="ts4">Example: &ldquo;TCP Options,7,1&rdquo;</span></p>
+                <p class="ps2"><span class="ts2">&nbsp;</span></p>
+              </td>
+              <td class="cell0">
+                <p>&nbsp;</p>
+              </td>
+            </tr>
+            <tr class="row0">
+              <td class="cell3">
+                <p>&nbsp;</p>
+              </td>
+              <td class="cell4">
+                <p class="ps9"><span class="ts6">Copyright &copy; 2023 Eaton-Peabody Laboratories</span></p>
+              </td>
+              <td class="cell5">
+                <p>&nbsp;</p>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </td>
+      <td class="cell0">
+        <p>&nbsp;</p>
+      </td>
+    </tr>
+  </table>
+</div>
+</body>
+</html>
