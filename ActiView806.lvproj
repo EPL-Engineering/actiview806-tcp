@@ -46,6 +46,7 @@
 				<Item Name="Format Message String.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Format Message String.vi"/>
 				<Item Name="General Error Handler Core CORE.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/General Error Handler Core CORE.vi"/>
 				<Item Name="General Error Handler.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/General Error Handler.vi"/>
+				<Item Name="Get File Extension.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/libraryn.llb/Get File Extension.vi"/>
 				<Item Name="Get String Text Bounds.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Get String Text Bounds.vi"/>
 				<Item Name="Get Text Rect.vi" Type="VI" URL="/&lt;vilib&gt;/picture/picture.llb/Get Text Rect.vi"/>
 				<Item Name="GetHelpDir.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/GetHelpDir.vi"/>
@@ -92,10 +93,18 @@
 				<Item Name="UDP Multicast Write-Only Open.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/tcp.llb/UDP Multicast Write-Only Open.vi"/>
 				<Item Name="whitespace.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/whitespace.ctl"/>
 			</Item>
+			<Item Name="GetRawSocketFromConnectionID.vi" Type="VI" URL="../../../epl-vi-lib/TCP VIs/TCP_NODELAY.llb/GetRawSocketFromConnectionID.vi"/>
 			<Item Name="lvanlys.dll" Type="Document" URL="/&lt;resource&gt;/lvanlys.dll"/>
 			<Item Name="lvinput.dll" Type="Document" URL="/&lt;resource&gt;/lvinput.dll"/>
 			<Item Name="provcom_StringGlobals.vi" Type="VI" URL="/&lt;resource&gt;/Framework/Providers/Common/provcom_StringGlobals.vi"/>
-			<Item Name="TCP_NoDelay.vi" Type="VI" URL="../LV Source/TCP VIs/TCP_NODELAY.llb/TCP_NoDelay.vi"/>
+			<Item Name="subDetailed Error.vi" Type="VI" URL="../../../epl-vi-lib/Utility VIs/Error Handling VIs/Detailed ErrorSource.llb/subDetailed Error.vi"/>
+			<Item Name="TCP-Prepend String Length.vi" Type="VI" URL="../../../epl-vi-lib/TCP VIs/TCP-Prepend String Length.vi"/>
+			<Item Name="TCP_NoDelay.vi" Type="VI" URL="../../../epl-vi-lib/TCP VIs/TCP_NODELAY.llb/TCP_NoDelay.vi"/>
+			<Item Name="Text-Parse String Fields.vi" Type="VI" URL="../../../epl-vi-lib/Utility VIs/Text VIs/Text-Parse String Fields.vi"/>
+			<Item Name="UDP Discovery Server.vi" Type="VI" URL="../../../epl-vi-lib/TCP VIs/Discovery VIs/UDP Discovery Server.vi"/>
+			<Item Name="wsock32.dll" Type="Document" URL="wsock32.dll">
+				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
+			</Item>
 		</Item>
 		<Item Name="Build Specifications" Type="Build">
 			<Item Name="ActiView806-TCP" Type="EXE">
