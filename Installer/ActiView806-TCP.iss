@@ -1,13 +1,13 @@
 ; -- SPL Meter Installer.iss --
 
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING .ISS SCRIPT FILES!
-;#define semver "2.0"
+#define semver "2.0"
 #define verStr_ StringChange(semver, '.', '-')
 
 [Setup]
 AppName=ActiView806-TCP
 AppVerName=ActiView806-TCP {#semver}}
-DefaultDirName=C:\Biosemi\ActiView806-TCP\V{#semver}}
+DefaultDirName=C:\Biosemi\ActiView806-TCP\V{#semver}
 OutputDir=.\Output
 DefaultGroupName=EPL
 AllowNoIcons=yes
