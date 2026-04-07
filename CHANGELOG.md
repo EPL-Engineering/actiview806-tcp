@@ -1,6 +1,6 @@
 ## Changelog
 
-### V3.0 (unreleased)
+### V3.0 (2026-04-07)
 #### Changed
 - upgraded discovery/TCP messaging
 
