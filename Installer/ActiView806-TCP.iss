@@ -1,7 +1,7 @@
 ; -- SPL Meter Installer.iss --
 
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING .ISS SCRIPT FILES!
-#define semver "3.0"
+#define semver "3.1"
 #define verStr_ StringChange(semver, '.', '-')
 
 [Setup]
